@@ -32,13 +32,20 @@ def run():
         predictions = Classification.classify_image(image, class_model, (256, 256))
         class_prediction = class_names[np.argmax(predictions)]
         # st.write(f"Prediction: {class_prediction}")
-        # Container with custom styling
+        # Container to display the results
         container = st.container()
         with container:
             st.markdown(f"<div style='border-style: solid; border-width: 2px; padding: 10px; text-align: center;'>"
-                        f"<strong>Prediction: {class_prediction}</strong></div>",
+                        f"<strong>Classified Pattern Type: {class_prediction}</strong></div>",
+                        unsafe_allow_html=True)
+            st.write(" ")
+            # Additionally, inform the user about the market direction based on the classification
+            st.markdown(f"<div style='border-style: solid; border-width: 2px; padding: 10px; text-align: center;'>"
+                        f"<div style='text-align: center;'><em>{Classification.pattern_direction[class_prediction]}"
+                        f"</em></div>",
                         unsafe_allow_html=True)
         # Display the probabilities for each class
+        st.write(" ")
         st.write("Probabilities:")
         for class_name, probability in zip(class_names, predictions):
             st.write(f"{class_name}: {probability:.2%}")

@@ -5,11 +5,29 @@ import Predictor
 import napp
 
 # Sidebar for navigation
-st.sidebar.title("Navigation")
+st.sidebar.title("CryptoVisionX")
 page = st.sidebar.radio("Go to", ("Pattern Predictor", "Pattern Classifier", "Price Predictor", "Input Data Predictor"))
 
+# Adding a watermark at the bottom
+st.markdown("""
+    <style>
+    .watermark {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        opacity: 0.5;
+        z-index: 9999;
+        font-size: 10px;
+        padding: 5px;
+    }
+    </style>
+    <div class="watermark">
+        Developed by Shavin Fernando
+    </div>
+    """, unsafe_allow_html=True)
 
-# Define your functions for different functionalities
+# Define the functions for different functionalities
+
 
 def pattern_predictor():
     st.title("Cryptocurrency Price Pattern Prediction")

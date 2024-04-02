@@ -1,7 +1,4 @@
-from PIL import Image
 import numpy as np
-from tensorflow.keras.preprocessing.image import load_img, img_to_array
-import tensorflow as tf
 
 
 def classify_image(image, model, image_size):
@@ -24,11 +21,14 @@ def prep_image(image, image_size):
     return image
 
 
-# def preprocess_image(image_path, image_size):
-#     image = load_img(image_path, target_size=image_size, color_mode='grayscale')
-#     # Convert the image to a numpy array and normalize pixel values
-#     image = img_to_array(image) / 255.0
-#     image = np.expand_dims(image, axis=-1)
-#     image = np.expand_dims(image, axis=0)
-#     return image
+# Define a dictionary mapping class names to market directions
+pattern_direction = {
+    'Double_Bottom': 'A bullish reversal pattern indicating upward movement',
+    'Ascending_Triangle': 'A bullish continuation pattern indicating upward movement',
+    'Falling_Wedge': 'A bullish reversal pattern indicating upward movement',
+    'Double_Top': 'A bearish reversal pattern indicating downward movement',
+    'Symmetrical_Triangle': 'A continuation pattern, direction depends on breakout',
+    'Rising_Wedge': 'A bearish reversal pattern indicating downward movement',
+    'Descending_Triangle': 'A bearish continuation pattern indicating downward movement'
+}
 

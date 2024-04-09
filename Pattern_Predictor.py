@@ -7,6 +7,7 @@ from keras.applications.resnet50 import preprocess_input
 from keras.models import load_model
 import functions
 import Grad_Cam
+import Pattern_Classifier
 
 
 def run(selected_currency):
@@ -81,7 +82,7 @@ def run(selected_currency):
         # Explaining the feature involvement for prediction
         st.write("## Involvement of Input image for prediction:")
 
-        img_array = preprocess_input(Grad_Cam.get_img_array(uploaded_file, size=(224, 224)))
+        img_array = preprocess_input(Grad_Cam.get_img_array(uploaded_file, size=(1024, 1024)))
 
         last_layer = base_model.layers[-1]
         last_conv_layer_name = last_layer.name
@@ -90,8 +91,15 @@ def run(selected_currency):
 
         Grad_Cam.save_and_display_gradcam(uploaded_file, heatmap)
 
+        st.write(" ")
+        if st.button('Classify Future Price Direction'):
+            # Forecast the future direction of the cryptocurrency price
+            st.write("Forecasting the future cryptocurrency price direction...")
+            Pattern_Classifier.classify_method(uploaded_file)
+
     else:
         st.write("Please upload an image to view predictions.")
+
 
 
 

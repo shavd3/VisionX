@@ -8,6 +8,19 @@ import XAI_lime
 
 
 def run():
+    # Streamlit UI
+    # Classify the uploaded image
+    st.title('Cryptocurrency Chart Pattern Classification')
+    st.write('Upload an image of the cryptocurrency chart to classify its pattern.')
+
+    uploaded_img = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
+    if uploaded_img is not None:
+        st.image(uploaded_img, caption='Uploaded Image', use_column_width=True)
+
+    classify_method(uploaded_img)
+
+
+def classify_method(uploaded_file):
     # Load classification model
     # @st.cache_data()
     def load_model(model_path):
@@ -17,15 +30,9 @@ def run():
 
     class_model = load_model('Files/Models/crypto_chart_pattern_classifier.h5')
 
-    # Streamlit UI
-    # Classify the uploaded image
-    st.title('Cryptocurrency Chart Pattern Classification')
-    st.write('Upload an image of the cryptocurrency chart to classify its pattern.')
-
-    uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
-        st.image(uploaded_file, caption='Uploaded Image', use_column_width=True)
+        # st.image(uploaded_file, caption='Uploaded Image', use_column_width=True)
         st.write("Classifying...")
         class_names = ['Double_Bottom', 'Ascending_Triangle', 'Falling_Wedge', 'Double_Top',
                        'Symmetrical_Triangle', 'Rising_Wedge', 'Descending_Triangle']  # Class names

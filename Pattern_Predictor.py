@@ -110,7 +110,6 @@ def run(selected_currency):
             # Forecast the future direction of the cryptocurrency price
             st.write("Forecasting the future cryptocurrency price direction...")
             Pattern_Classifier.classify_method(uploaded_file)
-
     else:
         st.write("Please upload an image to view predictions.")
 

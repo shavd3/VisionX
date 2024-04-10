@@ -58,7 +58,7 @@ def run():
             timedelta_freq = pd.Timedelta(minutes=1)
             periods = pred_duration * 24 * 60  # Assuming 60 minutes in an hour, 24 hours for each day
 
-            # Adjusting the start date for future_dates based on the selected frequency
+        # Adjusting the start date for future_dates based on the selected frequency
         future_dates = pd.date_range(start=df['timestamp'].iloc[-1] + timedelta_freq, periods=periods,
                                      freq=freq_options[pred_freq])
         future_df = pd.DataFrame(future_dates, columns=['timestamp'])

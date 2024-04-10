@@ -18,6 +18,20 @@ def run(selected_currency):
         model = load_model('Files/Models/lstm_model_ETHUSDT.h5')
     elif selected_currency == 'BNB/USDT':
         model = load_model('Files/Models/lstm_model_BNBUSDT.h5')
+    elif selected_currency == 'XRP/USDT':
+        model = load_model('Files/Models/lstm_model_XRPUSDT.h5')
+    elif selected_currency == 'ADA/USDT':
+        model = load_model('Files/Models/lstm_model_ADAUSDT.h5')
+    elif selected_currency == 'LTC/USDT':
+        model = load_model('Files/Models/lstm_model_LTCUSDT.h5')
+    elif selected_currency == 'DOGE/USDT':
+        model = load_model('Files/Models/lstm_model_BTCUSDT.h5')
+    elif selected_currency == 'SOL/USDT':
+        model = load_model('Files/Models/lstm_model_BTCUSDT.h5')
+    elif selected_currency == 'AVA/USDT':
+        model = load_model('Files/Models/lstm_model_BTCUSDT.h5')
+    elif selected_currency == 'DOT/USDT':
+        model = load_model('Files/Models/lstm_model_BTCUSDT.h5')
     else:
         model = load_model('Files/Models/lstm_model_2.h5')
 

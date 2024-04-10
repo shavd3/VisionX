@@ -56,8 +56,3 @@ def classify_method(uploaded_file):
         st.write("Probabilities:")
         for class_name, probability in zip(class_names, predictions):
             st.write(f"{class_name}: {probability:.2%}")
-
-        # # Display LIME explanation
-        # explanation_img = XAI_lime.explain_classification(Classification.prep_image(image, (256, 256)),
-        #                                                   class_model, class_names)
-        # st.image(explanation_img, caption='LIME Explanation', use_column_width=True)

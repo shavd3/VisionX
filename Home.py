@@ -31,8 +31,9 @@ st.markdown("""
 
 def pattern_predictor():
     st.title("Cryptocurrency Price Pattern Prediction")
-    currencies = ['BTC/USDT', 'ETH/USDT', 'BNB/USDT']
-    selected_currency = st.selectbox('Select the currency pair u want to predict:', currencies)
+    currencies = ['BTC/USDT', 'ETH/USDT', 'BNB/USDT', 'XRP/USDT', 'ADA/USDT', 'LTC/USDT', 'DOGE/USDT', 'SOL/USDT',
+                  'AVA/USDT', 'DOT/USDT', 'OTHER']
+    selected_currency = st.selectbox('Select the cryptocurrency you want to predict:', currencies)
 
     Pattern_Predictor.run(selected_currency)
 

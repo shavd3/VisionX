@@ -6,7 +6,7 @@ import napp
 
 # Sidebar for navigation
 st.sidebar.title("CryptoVisionX")
-page = st.sidebar.radio("Go to", ("Pattern Predictor", "Pattern Classifier", "Price Predictor", "Input Data Predictor"))
+page = st.sidebar.radio("Go to", ("Pattern Predictor", "Pattern Classifier", "Input Data Predictor"))
 
 # Adding a watermark at the bottom
 st.markdown("""

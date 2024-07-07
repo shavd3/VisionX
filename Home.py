@@ -42,8 +42,8 @@ def pattern_classifier():
     Pattern_Classifier.run()
 
 
-def price_predictor():
-    Predictor.run()
+# def price_predictor():
+#     Predictor.run()
 
 
 def input_data_predictor():
@@ -54,7 +54,7 @@ if page == "Pattern Predictor":
     pattern_predictor()
 elif page == "Pattern Classifier":
     pattern_classifier()
-elif page == "Price Predictor":
-    price_predictor()
+# elif page == "Price Predictor":
+#     price_predictor()
 elif page == "Input Data Predictor":
     input_data_predictor()
